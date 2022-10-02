@@ -1,8 +1,42 @@
+body{
+  margin: 0;
+  background-color:#ebedf0;
+}
+.loginpage{
+  display: inline-block;
+}
+.fb h1{
+color: #1877f2;
+font-size: 70px;
+}
+.fb h4{
+  font-size: 25px;
+  font-weight: 500;
+  color: #1c1e21;;
+}
+.login{
+  width: 400px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +69,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

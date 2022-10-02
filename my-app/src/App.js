@@ -1,10 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Login from './login';
 function App() {
   return (
     <div className="App">
-      <h1>facebook clone</h1>
+      <Login />
     </div>
   );
 }
