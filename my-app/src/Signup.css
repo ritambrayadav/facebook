@@ -1,0 +1,142 @@
+.popup {
+    /* display: none; */
+    background-color: white;
+    width: 400px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.header {
+    text-align: start;
+}
+
+.header h1 {
+    margin: 0px;
+}
+
+.header p {
+    margin: 10px 0px;
+}
+
+hr {
+    background-color: grey;
+    width: auto;
+    height: 0.5px;
+}
+
+.header button {
+    float: right;
+    border: none;
+    background-color: white;
+    color: grey;
+    font-size: large;
+    font-weight: 500;
+    padding: 10px 10px;
+    border-radius: 3px;
+}
+
+.fullname,
+.add_and_pass {
+    width: 400px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.fullname input {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid grey;
+}
+
+#firstname {
+    margin-right: 5px;
+}
+
+.add_and_pass {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+}
+
+.add_and_pass input {
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid grey;
+}
+
+.birth {
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+.birth p {
+    margin: 5px;
+    text-align: left;
+    font-size: small;
+}
+
+.birth div {
+    display: flex;
+    flex-direction: row;
+}
+
+.birth div select {
+    margin-right: 10px;
+}
+
+.birth div select,
+.birth div input {
+    width: 150px;
+    padding: 10px 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.gender {
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+.gender p {
+    font-size: small;
+    margin: 5px;
+}
+
+.div {
+    margin-right: 10px;
+}
+
+.gender div {
+    display: inline-block;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 120px;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.gender div input {
+    float: right;
+    margin: 5px;
+}
+
+.popup>p {
+    font-size: small;
+}
+
+.popup>button {
+    width: 200px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00a400;
+    color: white;
+}
+
+.popup>button:hover {
+    opacity: 0.8;
+}
