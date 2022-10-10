@@ -1,13 +1,14 @@
 body {
     background-color: #ebedf0;
+    overflow: hidden;
 }
-
-.ritu {
+.login_container {
     display: flex;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0px 10%;
+    flex-direction: row;
+    justify-content: center;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* transform: translateY(32%); */
 }
 
 .fb {
@@ -37,7 +38,7 @@ body {
     text-align: center;
 }
 
-.login form input {
+.login form input,.login form >button {
     width: 350px;
     font-size: 18px;
     box-sizing: border-box;
@@ -56,13 +57,13 @@ body {
     box-shadow: 0px 0px 10px #1877f2;
 }
 
-form input[type='button'] {
+form >button {
     background-color: #1877f2;
     color: white;
     border: none;
 }
 
-form input[type='button']:hover,
+form >button:hover,
 .login>button:hover {
     opacity: 0.9;
 }
@@ -84,7 +85,9 @@ form input[type='button']:hover,
     padding: 15px 20px;
     border-radius: 5px;
 }
-
+.loginpage{
+    margin: 10% 0;
+}
 .loginpage p a {
     color: black;
     text-decoration: none;
@@ -100,7 +103,7 @@ form input[type='button']:hover,
 }
 
 @media screen and (max-width:900px) {
-    .ritu {
+    .login_container{
         width: fit-content;
         display: flex;
         flex-direction: column;
@@ -110,4 +113,8 @@ form input[type='button']:hover,
     .fb {
         text-align: center;
     }
+    .loginpage{
+        margin: 0px;
+    }
+
 }

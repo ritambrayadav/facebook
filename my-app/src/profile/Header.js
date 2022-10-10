@@ -12,7 +12,7 @@ import { faVideoCamera , faUsers , faBars } from '@fortawesome/free-solid-svg-ic
 function Header() {
     return (
         <div className='App'>
-            <div className='header'>
+            <div className='header_home'>
                 <div className='left_header'>
                     <img alt='facebook logo' src={facebook} />
                     <form>

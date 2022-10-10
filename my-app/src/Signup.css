@@ -1,9 +1,22 @@
-.popup {
-    /* display: none; */
-    background-color: white;
-    width: 400px;
+.app_signup{
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup > form {
+    width: 500px;
     border-radius: 5px;
     padding: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
 
 .header {
@@ -34,7 +47,10 @@ hr {
     padding: 10px 10px;
     border-radius: 3px;
 }
-
+.fullname{
+    display: flex;
+    flex-direction: row;
+}
 .fullname,
 .add_and_pass {
     width: 400px;
@@ -123,11 +139,11 @@ hr {
     margin: 5px;
 }
 
-.popup>p {
+.popup form >p {
     font-size: small;
 }
 
-.popup>button {
+.popup form >button {
     width: 200px;
     box-sizing: border-box;
     padding: 10px;
@@ -137,6 +153,16 @@ hr {
     color: white;
 }
 
-.popup>button:hover {
+.popup form  >button:hover {
     opacity: 0.8;
+}
+
+
+
+
+@media screen and (max-width:900px) {
+    .app_signup{
+        position: fixed;
+        bottom: 0px;
+    }
 }

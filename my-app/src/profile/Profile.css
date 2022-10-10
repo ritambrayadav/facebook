@@ -1,4 +1,4 @@
-.header{
+.header_home{
     height: 60px;
     width: 100%;
     background-color: aqua;
@@ -85,6 +85,7 @@ background-color: yellow;
     height: 150px;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 .profilePhoto{
     background-color:blanchedalmond;
@@ -100,7 +101,12 @@ background-color: yellow;
 .profileName h2{
     margin-top:0px;
 }
-
+.editButton{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    
+}
 
 /* ////////////////////// Posts.js ///////////////////////// */
 
@@ -109,4 +115,7 @@ background-color: yellow;
     background-color: bisque;
     width: 50vw;
     height: 200px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
 }
