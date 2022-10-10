@@ -76,9 +76,26 @@
 .coverphoto{
     background-color: blueviolet;
     width: 50%;
-    height: 100px;
+    height: auto;
     border-radius: 5px;
+    position: relative;
 }
+.coverphoto > img{
+    width: 100%;
+    height: auto;
+}
+.coverphoto > form > button{
+    position: absolute;
+    bottom:5px;
+    right: 5px;
+    background-color: white;
+    color: black;
+    font-size: small;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+
 .profileDetail{
 background-color: yellow;
     width: 50vw;
@@ -88,24 +105,49 @@ background-color: yellow;
     position: relative;
 }
 .profilePhoto{
-    background-color:blanchedalmond;
+    /* background-color:blanchedalmond; */
+    /* background: url("../images/profilePhoto.jpg");
+    background-size: cover;
+    overflow: hidden; */
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border: 10px solid red;
     transform: translateY(-20%);
     margin-right: 20px;
+}
+.profilePhoto > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile_edit > form > button{
+    background-color: grey;
+    color: black;
+    display: block;
+    position: absolute;
+    left: 120px;
+    top: 70px;
+    border-radius: 50%;
+    padding: 5px 8px;
 }
 .profileName{
     margin-right: 20px;
 }
-.profileName h2{
+.profileName h3{
     margin-top:0px;
 }
 .editButton{
     position: absolute;
-    right: 10px;
-    bottom: 10px;
-    
+    right: 0px;
+    bottom: 5px;
+}
+.editButton > form > button {
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+    background-color: grey;
 }
 
 /* ////////////////////// Posts.js ///////////////////////// */
@@ -118,4 +160,44 @@ background-color: yellow;
     position: absolute;
     left:50%;
     transform: translateX(-50%);
+}
+.post_profile_photo{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    float: left;
+}
+.post > .post_profile_photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.post_details{
+    float: left;
+    height: 50px;
+    padding-left: 10px;
+} 
+.post_details h3, .post_details h5{
+    margin: 0px;
+}
+.post_details h3{
+    font-size: medium;
+}
+.post_details h5{
+    font-size: small;
+}
+.post_image img{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+.add_post > button{
+    /* position: absolute; */
+    transform: translateY(-100px);
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
 }

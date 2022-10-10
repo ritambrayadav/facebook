@@ -1,7 +1,6 @@
 import { Alert } from 'bootstrap'
 import React, { useState } from 'react'
 import './Signup.css'
-import Cover from './profile/Cover'
 
 function Signup({ setOpenModal }) {
     const [firstname, setFirstname] = useState("")
@@ -33,7 +32,12 @@ function Signup({ setOpenModal }) {
 
             console.log("Saved in local storage")
             setLogin(!login)
+        };
+
+        let func = () => {
+            setOpenModal(false);
         }
+        func();
     }
 
 
@@ -51,7 +55,6 @@ function Signup({ setOpenModal }) {
                         >
                             X
                         </button>
-
                         <h1>Sign Up</h1>
                         <p>It's quick and easy</p>
                     </div>
@@ -148,11 +151,7 @@ function Signup({ setOpenModal }) {
                     </p>
 
 
-                    <button type='submit'
-                        // onClick={() => {
-                        //     setOpenModal(false);
-                        // }}
-                    >
+                    <button type='submit'>
                         Sign Up
                     </button>
 

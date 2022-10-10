@@ -55,7 +55,6 @@ function Login() {
                                     <br />
                                     <button type='submit'> Log in</button>
 
-
                                     {flag && (
                                         <Alert color="primary" varient='danger'>
                                             Please Fill Correct Information
@@ -63,24 +62,21 @@ function Login() {
                                     )
                                     }
                                 </form>
-
                                 <a href='#'> Forgtten Password?</a>
                                 <br />
                                 <br />
                                 <hr />
                                 <br />
-
                                 <button onClick={() => {
                                     setModalOpen(true);
                                 }}>
                                     Create New Account
                                 </button>
-                                
+
                             </div>
-                            
                             <p><a href='#'>Create a Page</a> for a celebrity, brand or business.</p>
                         </div>
-{(modalOpen) && <Signup setOpenModal={setModalOpen} />}
+                        {(modalOpen) && <Signup setOpenModal={setModalOpen} />}
                     </div>
                 ) : <Cover />}
 

@@ -2,16 +2,14 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Login from './login';
 import Signup from './Signup';
-import Header from './profile/Header.js'
 import Cover from './profile/Cover.js'
 import Posts from './profile/Posts.js'
 function App() {
   return (
     <div className="App">
-      <Login />
+      {/* <Login /> */}
       {/* <Signup/> */}
-      {/* <Header/> */}
-      {/* <Cover /> */}
+      <Cover />
       {/* <Posts /> */}
     </div>
   );
