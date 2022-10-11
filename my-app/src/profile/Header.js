@@ -10,6 +10,7 @@ import { faVideoCamera , faUsers , faBars } from '@fortawesome/free-solid-svg-ic
 
 
 function Header() {
+    
     return (
         <div className='App'>
             <div className='header_home'>

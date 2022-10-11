@@ -1,6 +1,6 @@
 body {
     background-color: #ebedf0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .login_container {
     display: flex;
