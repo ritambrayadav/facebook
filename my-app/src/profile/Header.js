@@ -1,7 +1,6 @@
 import './Profile.css'
 import React from 'react'
 import facebook from '../images/Facebook.png'
-import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome , faComments , faBell } from '@fortawesome/free-solid-svg-icons'
 import { faVideoCamera , faUsers , faBars } from '@fortawesome/free-solid-svg-icons'
@@ -29,7 +28,11 @@ function Header() {
                     <a><FontAwesomeIcon icon={faBars} /></a>
                     <a><FontAwesomeIcon icon={faComments} /></a>
                     <a><FontAwesomeIcon icon={faBell} /></a>
-                    <a>Profile logo</a>
+                    <a><img alt='Profile'src={
+                            localStorage.getItem("Image")
+                            ? localStorage.getItem("Image")
+                            : null
+                        }/></a>
                 </div>
             </div>
         </div>

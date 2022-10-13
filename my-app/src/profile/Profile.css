@@ -1,7 +1,7 @@
 .header_home{
     height: 60px;
     width: 100%;
-    background-color: aqua;
+    background-color:#E0E0E0;
     position: relative;
 }
 .left_header{
@@ -39,7 +39,8 @@
     font-size: large;
 }
 .central_header > a{
-    margin:10px 20px;
+    margin:10px 0px;
+    margin-right: 100px;
 }
 
 .right_header{
@@ -53,7 +54,11 @@
 .right_header > a{
     margin: 10px 20px;
 }
-
+.right_header > a > img{
+    width:35px;
+    height: 27px;
+    margin-right: 10px;
+}
 
 
 
@@ -93,6 +98,7 @@
     font-size: small;
     border-radius: 5px;
     border: 1px solid grey;
+    padding: 2px 5px;
 }
 .coverphoto > form > input{
     display: none;
@@ -100,7 +106,7 @@
 
 
 .profileDetail{
-background-color: yellow;
+background-color: #E0E0E0;
     width: 50vw;
     height: 150px;
     display: flex;
@@ -115,7 +121,7 @@ background-color: yellow;
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 10px solid red;
+    border: 2px solid black;
     transform: translateY(-20%);
     margin-right: 20px;
 }
@@ -162,7 +168,7 @@ background-color: yellow;
 
 
 .post{
-    background-color: bisque;
+    /* background-color: white; */
     width: 50vw;
     height: 200px;
     position: absolute;
@@ -196,23 +202,100 @@ background-color: yellow;
 .post_details h5{
     font-size: small;
 }
-.post_image{
+.app_post{
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .post_image img{
     width: 100%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 80px;
 }
 .add_post > label {
     position: absolute;
+    width: 100%;
     top: 0;
-    right: 0;
+    right: 50%;
+    transform: translateX(50%);
     color: white;
     background-color: black;
+    box-sizing: border-box;
     padding: 10px;
     border-radius: 5px;
+    margin: 10px 0px;
 }
 .add_post > input {
     display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* /////////// Info.js  //////////*/
+.aside{
+    background-color: white;
+    float: left;
+    text-align: left;
+}
+.aside h1 {
+    color: black;
+}
+.aside button{
+    background-color: #E0E0E0;
+    color: black;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    border: 1px solid grey;
+}
+
+
+
+
+
+/* /////////// Edit //////////////// */
+.edit {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.edit form input{
+    /* display: none; */
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 10px ;
+}
+.edit form input{
+    outline: none;
+}
+.edit form button{
+    background-color: #E0E0E0;
+    color: black;
+    /* width: 100%; */
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin: 10px 0px;
 }

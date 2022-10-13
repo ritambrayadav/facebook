@@ -2,6 +2,7 @@ import './Profile.css'
 import React, { useState } from 'react'
 import Header from './Header';
 import Posts from './Posts';
+import Info from './Info';
 import cover from '../images/coverPhoto.jpg'
 import profile from '../images/profilePhoto.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,8 +10,8 @@ import { faCamera, faPencil, faPlusCircle } from '@fortawesome/free-solid-svg-ic
 
 function Cover() {
 
-    // const [img, setImg] = useState("")
-
+    const cover_photo = `${cover}`
+    const profile_photo = `${profile}`
     const getBase64 = (file) => {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -34,7 +35,11 @@ function Cover() {
             console.debug("File Store", base64);
         });
     };
-
+    function fullname(){
+        return (localStorage.getItem("FirstName") && localStorage.getItem("LastName"))
+                ? localStorage.getItem("FirstName") + " " +  localStorage.getItem("LastName")
+                : 'User Name'
+    }
     return (
         <>
             <Header />
@@ -44,7 +49,7 @@ function Cover() {
                     src={
                         localStorage.getItem("ProfileImage")
                         ? localStorage.getItem("ProfileImage")
-                        : {cover}
+                        : cover_photo
                     } /> 
                     <form>
                             <label for='profile_upload'>
@@ -53,13 +58,15 @@ function Cover() {
                             <input type='file' id='profile_upload' onChange={handleProfileImage}/>
                     </form>
                 </div>
+
+
                 <div className='profileDetail'>
                     <div className='profilePhoto'>
                         <img alt='profile' 
                         src={
                             localStorage.getItem("Image")
                             ? localStorage.getItem("Image")
-                            : {profile}
+                            : profile_photo
                         } />
                     </div>
                     <div className='profile_edit'>
@@ -71,18 +78,20 @@ function Cover() {
                         </form>
                     </div>
                     <div className='profileName'>
-                        <h3>Ritambra yadav</h3>
-                        <h6>1000 friends</h6>
+                        <h3>{fullname}</h3>
                     </div>
                     <div className='editButton'>
                         <form>
                             <button type='submit'><FontAwesomeIcon icon={faPlusCircle} /> Add Story</button>
-                            <button type='submit'><FontAwesomeIcon icon={faPencil} /> Edit Profile</button>
+                            {/* <button type='submit'><FontAwesomeIcon icon={faPencil} /> Edit Profile</button> */}
                         </form>
                     </div>
                 </div>
             </div>
+
             <Posts />
+            <Info />
+
         </>
     )
 }

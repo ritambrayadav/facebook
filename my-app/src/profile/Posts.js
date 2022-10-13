@@ -30,7 +30,7 @@ function Posts() {
     return (
         <div className='app_post'>
             <div className='post'>
-                <div className='post_profile_photo'>
+                {/* <div className='post_profile_photo'>
                     <img alt='profile'
                         src={
                             localStorage.getItem("Image")
@@ -38,11 +38,17 @@ function Posts() {
                                 : { profile }
                         }
                     />
-                </div>
-                <div className='post_details'>
+                </div> */}
+                {/* <div className='post_details'>
                     <h3> profile name </h3>
                     <h5>Date posted</h5>
-                </div>
+                </div> */}
+
+
+
+
+
+                
                 <div className='post_image'>
                     <img alt='post by you'
                         src={
@@ -58,11 +64,30 @@ function Posts() {
                     </label>
                     <input type='file' id='post_upload' onChange={handlePost}/>
                 </form>
-                <div className='post_caption'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <div className='post_caption'>
                     <p>
                         Write post Caption
                     </p>
-                </div>
+                </div> */}
 
             </div>
         </div>

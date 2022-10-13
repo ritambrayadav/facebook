@@ -43,7 +43,6 @@ function Signup({ setOpenModal }) {
 
     return (
         <div className="app_signup">
-
             <div className='popup'>
                 <form onSubmit={handleSubmit}>
                     <div className='header'>
