@@ -5,16 +5,11 @@ function Edit({ setOpenM }) {
     const [school, setSchool] = useState("")
     const [currentLocation, setCurrentLocation] = useState("")
     const [permanentLocation, setPermanentLocation] = useState("")
-    const [flag, setFlag] = useState(false)
     const [edit, setEdit] = useState(true)
 
 
     function handleEdit(e) {
         e.preventDefault();
-        // if (!collage || !school || !currentLocation || !permanentLocation) {
-        //     setFlag(true);
-        // } else {
-            // setFlag(false);
             localStorage.setItem('Collage', JSON.stringify(collage));
             localStorage.setItem('School', JSON.stringify(school));
             localStorage.setItem('CurrentLocation', JSON.stringify(currentLocation));

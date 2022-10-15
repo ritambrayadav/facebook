@@ -8,10 +8,10 @@ import Edit from './profile/Info.js'
 function App() {
   return (
     <div className="App">
-      <Login />
+      {/* <Login /> */}
       {/* <Signup/> */}
       {/* <Cover /> */}
-      {/* <Posts /> */}
+      <Posts />
       {/* <Edit /> */}
     </div>
   );

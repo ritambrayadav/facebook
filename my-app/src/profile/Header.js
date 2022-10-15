@@ -4,12 +4,13 @@ import facebook from '../images/Facebook.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome , faComments , faBell } from '@fortawesome/free-solid-svg-icons'
 import { faVideoCamera , faUsers , faBars } from '@fortawesome/free-solid-svg-icons'
+import profile from '../images/profilePhoto.jpg'
 
 
 
 
 function Header() {
-    
+    const profile_photo = `${profile}`
     return (
         <div className='App'>
             <div className='header_home'>
@@ -28,11 +29,11 @@ function Header() {
                     <a><FontAwesomeIcon icon={faBars} /></a>
                     <a><FontAwesomeIcon icon={faComments} /></a>
                     <a><FontAwesomeIcon icon={faBell} /></a>
-                    <a><img alt='Profile'src={
-                            localStorage.getItem("Image")
-                            ? localStorage.getItem("Image")
-                            : null
-                        }/></a>
+                    <div className='header_profile_photo'><img alt='Profile'src={
+                                localStorage.getItem("Image")
+                                    ? localStorage.getItem("Image")
+                                    : profile_photo
+                            }/></div>
                 </div>
             </div>
         </div>

@@ -35,39 +35,34 @@ function Cover() {
             console.debug("File Store", base64);
         });
     };
-    function fullname(){
-        return (localStorage.getItem("FirstName") && localStorage.getItem("LastName"))
-                ? localStorage.getItem("FirstName") + " " +  localStorage.getItem("LastName")
-                : 'User Name'
-    }
     return (
         <>
             <Header />
             <div className='cover'>
                 <div className='coverphoto'>
-                    <img alt='cover' 
-                    src={
-                        localStorage.getItem("ProfileImage")
-                        ? localStorage.getItem("ProfileImage")
-                        : cover_photo
-                    } /> 
+                    <img alt='cover'
+                        src={
+                            localStorage.getItem("ProfileImage")
+                                ? localStorage.getItem("ProfileImage")
+                                : cover_photo
+                        } />
                     <form>
-                            <label for='profile_upload'>
-                                <FontAwesomeIcon icon={faCamera} /> Edit cover photo
-                            </label>
-                            <input type='file' id='profile_upload' onChange={handleProfileImage}/>
+                        <label for='profile_upload'>
+                            <FontAwesomeIcon icon={faCamera} /> Edit cover photo
+                        </label>
+                        <input type='file' id='profile_upload' onChange={handleProfileImage} />
                     </form>
                 </div>
 
 
                 <div className='profileDetail'>
                     <div className='profilePhoto'>
-                        <img alt='profile' 
-                        src={
-                            localStorage.getItem("Image")
-                            ? localStorage.getItem("Image")
-                            : profile_photo
-                        } />
+                        <img alt='profile'
+                            src={
+                                localStorage.getItem("Image")
+                                    ? localStorage.getItem("Image")
+                                    : profile_photo
+                            } />
                     </div>
                     <div className='profile_edit'>
                         <form>
@@ -78,7 +73,13 @@ function Cover() {
                         </form>
                     </div>
                     <div className='profileName'>
-                        <h3>{fullname}</h3>
+                        {
+                            ((localStorage.getItem("FirstName")) || (localStorage.getItem("LastName")))
+                                ? <h3> {JSON.parse(localStorage.getItem("FirstName"))} {JSON.parse(localStorage.getItem("LastName"))}</h3>
+                                : (localStorage.getItem("FirstName"))
+                                    ? <h3>{JSON.parse(localStorage.getItem("FirstName"))}</h3>
+                                    : <h3>User Name</h3>
+                        }
                     </div>
                     <div className='editButton'>
                         <form>

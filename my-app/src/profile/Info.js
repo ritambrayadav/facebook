@@ -12,6 +12,7 @@ function Info() {
     <div>
       <aside className='aside'>
         <h1>Intro</h1>
+        <hr />
         {localStorage.getItem('Collage') ? <h4><FontAwesomeIcon icon={faGraduationCap} /> {JSON.parse(localStorage.getItem("Collage"))}</h4> :null}
         {localStorage.getItem('School') ? <h4><FontAwesomeIcon icon={faGraduationCap} /> {JSON.parse(localStorage.getItem('School'))}</h4> :null}
         {localStorage.getItem('CurrentLocation') ? <h4><FontAwesomeIcon icon={faHome} /> {JSON.parse(localStorage.getItem('CurrentLocation'))}</h4> :null}

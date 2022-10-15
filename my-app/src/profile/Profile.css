@@ -1,3 +1,6 @@
+body{
+    overflow-x: hidden;
+}
 .header_home{
     height: 60px;
     width: 100%;
@@ -54,14 +57,18 @@
 .right_header > a{
     margin: 10px 20px;
 }
-.right_header > a > img{
-    width:35px;
-    height: 27px;
-    margin-right: 10px;
+.header_profile_photo{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
 }
-
-
-
+.header_profile_photo > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit:cover;
+}
 
 
 
@@ -76,7 +83,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 .coverphoto{
     background-color: blueviolet;
@@ -112,6 +118,8 @@ background-color: #E0E0E0;
     display: flex;
     flex-direction: row;
     position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .profilePhoto{
     /* background-color:blanchedalmond; */
@@ -169,11 +177,11 @@ background-color: #E0E0E0;
 
 .post{
     /* background-color: white; */
-    width: 50vw;
-    height: 200px;
+    width: 50%;
     position: absolute;
-    left:50%;
-    transform: translateX(-50%);
+    left:51%;
+    transform: translateX(-51%);
+    /* padding: 10px; */
 }
 .post_profile_photo{
     width: 50px;
@@ -202,6 +210,8 @@ background-color: #E0E0E0;
 .post_details h5{
     font-size: small;
 }
+
+
 .app_post{
     position: relative;
     display: flex;
@@ -243,6 +253,11 @@ background-color: #E0E0E0;
     background-color: white;
     float: left;
     text-align: left;
+    width: 24%;
+    margin: 10px;
+    /* margin-top: 0px; */
+    border-radius: 5px;
+    padding: 5px;
 }
 .aside h1 {
     color: black;
@@ -266,9 +281,9 @@ background-color: #E0E0E0;
     margin: 0px;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.35);
-    position: fixed;
-    display: flex;
+    /* background-color: rgba(0, 0, 0, 0.35); */
+    position: relative;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -280,6 +295,11 @@ background-color: #E0E0E0;
     padding: 10px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* position: absolute; */
+    /* left: 50%; */
+    /* top: 50%; */
+
+
 }
 .edit form input{
     /* display: none; */

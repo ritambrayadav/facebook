@@ -1,4 +1,5 @@
 import './Profile.css'
+import View from './View'
 import React from 'react'
 import post from '../images/post.png'
 import profile from '../images/profilePhoto.jpg'
@@ -7,22 +8,47 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Posts() {
 
-    const getBase64 = (file) => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.onabort = (error) => reject(error);
-            reader.readAsDataURL(file);
-        });
-    };
 
-    const handlePost = (e) => {
-        const file = e.target.files[0];
-        getBase64(file).then((base64) => {
-            localStorage["PostImage"] = base64;
-            console.debug("File Store", base64);
-        });
-    };
+    var imagesObject = [];
+
+    function handleFileSelect(evt) {
+        var files = evt.target.files;
+        for (var i = 0, f; f = files[i]; i++) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                addImage(e.target.result);
+            };
+            reader.readAsDataURL(f);
+        }
+
+        loadFromLocalStorage();
+    }
+
+    function loadFromLocalStorage() {
+        var images = JSON.parse(localStorage.getItem("images"))
+        if (images && images.length > 0) {
+            imagesObject = images;
+        }
+    }
+
+    function addImage(imgData) {
+        imagesObject.push(imgData);
+        localStorage.setItem("images", JSON.stringify(imagesObject));
+    }
+
+    const getDatafromLS = () => {
+        const data = localStorage.getItem('images');
+        if (data) {
+            return JSON.parse(data);
+        }
+        else {
+            return []
+        }
+    }
+
+
+
+
 
 
 
@@ -30,6 +56,14 @@ function Posts() {
     return (
         <div className='app_post'>
             <div className='post'>
+                <form className='add_post'>
+                    <label for='post_upload'>
+                        <FontAwesomeIcon icon={faPlusCircle} /> Add Post
+                    </label>
+                    <input type='file' id='post_upload' onChange={handleFileSelect} />
+                </form>
+
+
                 {/* <div className='post_profile_photo'>
                     <img alt='profile'
                         src={
@@ -38,18 +72,14 @@ function Posts() {
                                 : { profile }
                         }
                     />
-                </div> */}
-                {/* <div className='post_details'>
+                </div>
+                <div className='post_details'>
                     <h3> profile name </h3>
                     <h5>Date posted</h5>
                 </div> */}
 
 
-
-
-
-                
-                <div className='post_image'>
+                {/* <div className='post_image'>
                     <img alt='post by you'
                         src={
                             localStorage.getItem("PostImage")
@@ -57,31 +87,7 @@ function Posts() {
                                 : null
                         }
                     />
-                </div>
-                <form className='add_post'>
-                    <label for='post_upload'>
-                        <FontAwesomeIcon icon={faPlusCircle} /> Add Post
-                    </label>
-                    <input type='file' id='post_upload' onChange={handlePost}/>
-                </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </div> */}
 
                 {/* <div className='post_caption'>
                     <p>
@@ -90,8 +96,21 @@ function Posts() {
                 </div> */}
 
             </div>
+            {
+              localStorage.getItem('images') 
+              ? <View getData ={getDatafromLS()} />
+              : <img alt="default post" src={profile}/>
+}
         </div>
     )
 }
 
 export default Posts;
+
+
+
+
+
+
+
+
