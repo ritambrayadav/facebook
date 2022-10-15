@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+      import React, { useState } from 'react'
 import Edit from './Edit'
 import './Profile.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,10 +13,10 @@ function Info() {
       <aside className='aside'>
         <h1>Intro</h1>
         <hr />
-        {localStorage.getItem('Collage') ? <h4><FontAwesomeIcon icon={faGraduationCap} /> {JSON.parse(localStorage.getItem("Collage"))}</h4> :null}
-        {localStorage.getItem('School') ? <h4><FontAwesomeIcon icon={faGraduationCap} /> {JSON.parse(localStorage.getItem('School'))}</h4> :null}
-        {localStorage.getItem('CurrentLocation') ? <h4><FontAwesomeIcon icon={faHome} /> {JSON.parse(localStorage.getItem('CurrentLocation'))}</h4> :null}
-        {localStorage.getItem('PermanentLocation') ? <h4><FontAwesomeIcon icon={faMapMarker} /> {JSON.parse(localStorage.getItem('PermanentLocation'))}</h4> :null}
+        {localStorage.getItem('Collage') ? <h4><FontAwesomeIcon icon={faGraduationCap} />studying at {JSON.parse(localStorage.getItem("Collage"))}</h4> :null}
+        {localStorage.getItem('School') ? <h4><FontAwesomeIcon icon={faGraduationCap} />studied from {JSON.parse(localStorage.getItem('School'))}</h4> :null}
+        {localStorage.getItem('CurrentLocation') ? <h4><FontAwesomeIcon icon={faHome} /> living at {JSON.parse(localStorage.getItem('CurrentLocation'))}</h4> :null}
+        {localStorage.getItem('PermanentLocation') ? <h4><FontAwesomeIcon icon={faMapMarker} /> from {JSON.parse(localStorage.getItem('PermanentLocation'))}</h4> :null}
         <button
         onClick={() => {
           setMOpen(true);

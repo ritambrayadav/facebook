@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCamera, faPencil, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Cover() {
-
     const cover_photo = `${cover}`
     const profile_photo = `${profile}`
     const getBase64 = (file) => {

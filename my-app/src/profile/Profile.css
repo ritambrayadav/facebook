@@ -70,7 +70,23 @@ body{
     object-fit:cover;
 }
 
-
+@media screen and (max-width:900px) {
+    .right_header > a{
+        margin: 10px 10px;
+    }
+    .central_header > a{
+        margin:10px 0px;
+        margin-right: 50px;
+    }
+    .left_header > form > input{
+        background-color: #ebedf0;
+        width: 100px;
+        padding: 7px 10px;
+        border: none;
+        border-radius: 10px;
+        margin-left: 5px;
+    }
+}
 
 
 
@@ -196,6 +212,7 @@ background-color: #E0E0E0;
     border-radius: 50%;
     object-fit: cover;
 }
+
 .post_details{
     float: left;
     height: 50px;
@@ -237,6 +254,20 @@ background-color: #E0E0E0;
 }
 .add_post > input {
     display: none;
+}
+/* /////////// View.js /////////// */
+.view_image{
+    background-color: white;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-direction:column-reverse;
+}
+.view_image #image_list{
+    width: 100% ; 
+    height:auto;
+    margin-bottom: 10px;
 }
 
 

@@ -2,7 +2,6 @@ import './Profile.css'
 import View from './View'
 import React from 'react'
 import post from '../images/post.png'
-import profile from '../images/profilePhoto.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -47,12 +46,6 @@ function Posts() {
     }
 
 
-
-
-
-
-
-
     return (
         <div className='app_post'>
             <div className='post'>
@@ -79,15 +72,13 @@ function Posts() {
                 </div> */}
 
 
-                {/* <div className='post_image'>
-                    <img alt='post by you'
-                        src={
-                            localStorage.getItem("PostImage")
-                                ? localStorage.getItem("PostImage")
-                                : null
-                        }
-                    />
-                </div> */}
+                <div className='post_image'>
+                    {
+                        localStorage.getItem('images')
+                            ? <View getData={getDatafromLS()} />
+                            : <img id='default_post' alt="default post" src={post} />
+                    }
+                </div>
 
                 {/* <div className='post_caption'>
                     <p>
@@ -96,11 +87,6 @@ function Posts() {
                 </div> */}
 
             </div>
-            {
-              localStorage.getItem('images') 
-              ? <View getData ={getDatafromLS()} />
-              : <img alt="default post" src={profile}/>
-}
         </div>
     )
 }
