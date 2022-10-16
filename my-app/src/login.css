@@ -77,7 +77,7 @@ form >button:hover,
     text-decoration: underline;
 }
 
-.login>button {
+.login>button{
     background-color: #42b72a;
     color: white;
     border: none;

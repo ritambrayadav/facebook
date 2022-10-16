@@ -3,6 +3,8 @@ import { useState } from 'react';
 import './login.css'
 import Signup from './Signup';
 import Cover from './profile/Cover';
+import { Link } from 'react-router-dom'
+
 
 
 function Login() {
@@ -17,7 +19,9 @@ function Login() {
         e.preventDefault();
         let mail = localStorage.getItem("Email").replace(/"/g, "");
         let pass = localStorage.getItem("Password").replace(/"/g, "");
-
+        
+        window.localStorage.setItem("isLoggedIn",true)
+        
         if (!emaillog || !passwordlog) {
             setFlag(true);
             console.log("Empty");
@@ -33,53 +37,59 @@ function Login() {
 
             {
                 cover ? (
-                    <div className='login_container'>
-                        <div className='fb loginpage'>
-                            <h1>facebook</h1>
-                            <h4>Facebook helps you
-                                connect and share with the people in your life.</h4>
-                        </div>
-                        <div className='loginpage'>
-                            <div className='login'>
+            <div className='login_container'>
+                <div className='fb loginpage'>
+                    <h1>facebook</h1>
+                    <h4>Facebook helps you
+                        connect and share with the people in your life.</h4>
+                </div>
+                <div className='loginpage'>
+                    <div className='login'>
 
-                                <form className='login_form' onSubmit={handleLogin}>
-                                    <input type='email'
-                                        placeholder='Email address'
-                                        onChange={(event) => setEmaillog(event.target.value)}
-                                    />
+                        <form className='login_form' onSubmit={handleLogin}>
+                            <input type='email'
+                                placeholder='Email address'
+                                onChange={(event) => setEmaillog(event.target.value)}
+                            />
 
-                                    <input type='password'
-                                        placeholder='Password'
-                                        onChange={(event) => setPasswordlog(event.target.value)}
-                                    />
-                                    <br />
-                                    <button type='submit'> Log in</button>
+                            <input type='password'
+                                placeholder='Password'
+                                onChange={(event) => setPasswordlog(event.target.value)}
+                            />
+                            <br />
+                            <button type='submit'> Log in</button>
+                            {/* <Link to='cover' type='submit'>Log in</Link> */}
 
-                                    {flag && (
-                                        <Alert color="primary" varient='danger'>
-                                            Please Fill Correct Information
-                                        </Alert>
-                                    )
-                                    }
-                                </form>
-                                <a href='#'> Forgtten Password?</a>
-                                <br />
-                                <br />
-                                <hr />
-                                <br />
-                                <button onClick={() => {
-                                    setModalOpen(true);
-                                }}>
+                            {flag && (
+                                <Alert color="primary" varient='danger'>
+                                    Please Fill Correct Information
+                                </Alert>
+                            )
+                            }
+                        </form>
+                        <a href='#'> Forgtten Password?</a>
+                        <br />
+                        <br />
+                        <hr />
+                        <br />
+                        <button onClick={() => {
+                            setModalOpen(true);
+                        }}>
+                            Create New Account
+                        </button>
+                        {/* <Link style={{backgroundColor: '#42b72a',color: 'white',border: 'none',
+                                                fontSize: '20px',padding: '15px 20px', borderRadius: '5px'}}to='signup' onClick={() => {
+                                    setModalOpen(true);}}>
                                     Create New Account
-                                </button>
+                                </Link> */}
 
-                            </div>
-                            <p><a href='#'>Create a Page</a> for a celebrity, brand or business.</p>
-                        </div>
-                        {(modalOpen) && <Signup setOpenModal={setModalOpen} />}
                     </div>
-                ) : <Cover />}
-
+                    <p><a href='#'>Create a Page</a> for a celebrity, brand or business.</p>
+                </div>
+                {(modalOpen) && <Signup setOpenModal={setModalOpen} />}
+            </div>
+            ) : <Cover />}
+            {/* <Link to='/blogs'> Button</Link> */}
         </div>
     );
 }
