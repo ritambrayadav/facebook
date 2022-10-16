@@ -1,12 +1,12 @@
 import './Profile.css'
-import React, { useState } from 'react'
+import React from 'react'
 import Header from './Header';
 import Posts from './Posts';
 import Info from './Info';
 import cover from '../images/coverPhoto.jpg'
 import profile from '../images/profilePhoto.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCamera, faPencil, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faCamera, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 function Cover() {
     const cover_photo = `${cover}`

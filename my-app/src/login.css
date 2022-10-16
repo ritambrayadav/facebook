@@ -6,9 +6,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* position: absolute; */
-    /* top: 50%; */
-    /* transform: translateY(32%); */
 }
 
 .fb {

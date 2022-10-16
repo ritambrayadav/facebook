@@ -3,7 +3,6 @@ import { useState } from 'react';
 import './login.css'
 import Signup from './Signup';
 import Cover from './profile/Cover';
-import { Link } from 'react-router-dom'
 
 
 
@@ -58,7 +57,6 @@ function Login() {
                             />
                             <br />
                             <button type='submit'> Log in</button>
-                            {/* <Link to='cover' type='submit'>Log in</Link> */}
 
                             {flag && (
                                 <Alert color="primary" varient='danger'>
@@ -67,7 +65,7 @@ function Login() {
                             )
                             }
                         </form>
-                        <a href='#'> Forgtten Password?</a>
+                        <a href='#'> Forgotten Password?</a>
                         <br />
                         <br />
                         <hr />
@@ -77,19 +75,12 @@ function Login() {
                         }}>
                             Create New Account
                         </button>
-                        {/* <Link style={{backgroundColor: '#42b72a',color: 'white',border: 'none',
-                                                fontSize: '20px',padding: '15px 20px', borderRadius: '5px'}}to='signup' onClick={() => {
-                                    setModalOpen(true);}}>
-                                    Create New Account
-                                </Link> */}
-
                     </div>
                     <p><a href='#'>Create a Page</a> for a celebrity, brand or business.</p>
                 </div>
                 {(modalOpen) && <Signup setOpenModal={setModalOpen} />}
             </div>
             ) : <Cover />}
-            {/* <Link to='/blogs'> Button</Link> */}
         </div>
     );
 }
