@@ -1,0 +1,337 @@
+body{
+    overflow-x: hidden;
+}
+.header_home{
+    height: 60px;
+    width: 100%;
+    background-color:#E0E0E0;
+    position: relative;
+}
+.left_header{
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 30px;
+
+}
+.left_header > img{
+    width:35px;
+    height: auto;
+    margin-right: 10px;
+}
+.left_header > form > input{
+    background-color: #ebedf0;
+    width: 200px;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+.left_header > form > input:focus{
+    outline: none;
+}
+
+.central_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    left:40vw;
+    font-size: large;
+}
+.central_header > a{
+    margin:10px 0px;
+    margin-right: 100px;
+}
+
+.right_header{
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    font-size: large;
+}
+.right_header > a{
+    margin: 10px 20px;
+}
+.header_profile_photo{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+.header_profile_photo > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+@media screen and (max-width:900px) {
+    .right_header > a{
+        margin: 10px 10px;
+    }
+    .central_header > a{
+        margin:10px 0px;
+        margin-right: 50px;
+    }
+    .left_header > form > input{
+        background-color: #ebedf0;
+        width: 100px;
+        padding: 7px 10px;
+        border: none;
+        border-radius: 10px;
+        margin-left: 5px;
+    }
+}
+
+
+
+
+/* ///////////////////// Cover.js file /////////////////// */
+.cover{
+    width: 100vw;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coverphoto{
+    background-color: blueviolet;
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    position: relative;
+}
+.coverphoto > img{
+    width: 100%;
+    height: auto;
+}
+.coverphoto > form > label{
+    position: absolute;
+    bottom:5px;
+    right: 5px;
+    background-color: white;
+    color: black;
+    font-size: small;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 2px 5px;
+}
+.coverphoto > form > input{
+    display: none;
+}
+
+
+.profileDetail{
+background-color: #E0E0E0;
+    width: 50vw;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.profilePhoto{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+    transform: translateY(-20%);
+    margin-right: 20px;
+}
+.profilePhoto > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile_edit > form > label{
+    background-color: grey;
+    color: black;
+    display: block;
+    position: absolute;
+    left: 120px;
+    top: 70px;
+    border-radius: 50%;
+    padding: 5px 8px;
+}
+.profile_edit > form > input[type='file']{
+    display: none;
+
+}
+
+.profileName{
+    margin-right: 20px;
+}
+.profileName h3{
+    margin-top:0px;
+}
+.editButton{
+    position: absolute;
+    right: 0px;
+    bottom: 5px;
+}
+.editButton > form > button {
+    border-radius: 5px;
+    border: none;
+    margin-right: 5px;
+    background-color: grey;
+}
+
+/* ////////////////////// Posts.js ///////////////////////// */
+
+
+.post{
+    /* background-color: white; */
+    width: 50%;
+    position: absolute;
+    left:51%;
+    transform: translateX(-51%);
+}
+.post_profile_photo{
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 50%;
+    float: left;
+}
+.post > .post_profile_photo > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post_details{
+    float: left;
+    height: 50px;
+    padding-left: 10px;
+} 
+.post_details h3, .post_details h5{
+    margin: 0px;
+}
+.post_details h3{
+    font-size: medium;
+}
+.post_details h5{
+    font-size: small;
+}
+
+
+.app_post{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.post_image img{
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+.add_post > label {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    color: white;
+    background-color: black;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+.add_post > input {
+    display: none;
+}
+/* /////////// View.js /////////// */
+.view_image{
+    background-color: white;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-direction:column-reverse;
+}
+.view_image #image_list{
+    width: 100% ; 
+    height:auto;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* /////////// Info.js  //////////*/
+.aside{
+    background-color: white;
+    float: left;
+    text-align: left;
+    width: 24%;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.aside h1 {
+    color: black;
+}
+.aside button{
+    background-color: #E0E0E0;
+    color: black;
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    border: 1px solid grey;
+}
+
+
+
+
+
+/* /////////// Edit //////////////// */
+.edit {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.edit form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.edit form input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 10px ;
+}
+.edit form input{
+    outline: none;
+}
+.edit form button{
+    background-color: #E0E0E0;
+    color: black;
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
