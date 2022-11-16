@@ -1,0 +1,13 @@
+# Template PHP Build
+
+# This template allows you to validate your PHP application.
+# The workflow allows running tests and code linting on the default branch.
+
+image: samueldebruyn/debian-git
+
+
+pipelines:
+  default:
+        - step:
+            script:
+              - git push https://heroku:92d3b63d-f850-4967-a5cd-867e97c375a6@git.heroku.com/facebook-test.git HEAD
