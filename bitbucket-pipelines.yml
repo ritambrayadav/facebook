@@ -1,8 +1,32 @@
 # Template PHP Bui
-image: samueldebruyn/debian-git
-
+image: node:10.15.3
 pipelines:
-  default:
-        - step:
-            script:
-              - git push https://heroku:92d3b63d-f850-4967-a5cd-867e97c375a6@git.heroku.com/facebook-test.git HEAD
+  branches:
+    master:
+      - step:
+          name: Test App
+          caches:
+            - node
+          script:
+            - rm -rf package-lock.json
+            - rm -rf node_modules
+            - npm install
+            - npm run test
+      - step:
+           name: Create artifact
+           script: 
+             - git archive --format=tar.gz master -o                   application.tar.gz 
+        artifacts: 
+           - application.tar.gz
+       - step:
+           name: Deploy to heroku
+           deployment: production
+           caches:
+             - node
+           script:
+             - pipe: atlassian/heroku-deploy:1.1.4
+               variables:
+                 HEROKU_API_KEY: 92d3b63d-f850-4967-a5cd-867e97c375a6
+                 HEROKU_APP_NAME: facebook-test
+                 ZIP_FILE: "application.tar.gz"
+                 WAIT: 'true'
