@@ -1,11 +1,6 @@
-# Template PHP Build
-
-# This template allows you to validate your PHP application.
-# The workflow allows running tests and code linting on the default branch.
+# Template PHP Bui
 
 image: samueldebruyn/debian-git
-
-
 pipelines:
   default:
         - step:
